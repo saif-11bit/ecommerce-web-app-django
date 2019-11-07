@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Product Db</title>
+</head>
+<body>
+    {% if backpanel %}
+    <div class="container-fluid">
+    <h1>Product Details</h1>
+    <hr>
+    
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Cateogry</th>
+          <th scope="col">Sub-Cateogry</th>
+          <th scope="col">Image</th>
+          <th scope="col">Description</th>
+          <th scope="col">Date</th>
+        </tr>
+      </thead>
+          <tbody>
+
+            {% for product in backpanel %}
+
+            <tr>
+              <td>{{product.product_name}}</td>
+              <td>{{product.price}}</td>
+              <td>{{product.category}}</td>
+              <td>{{product.subcategory }}</td>
+              <td>{{product.image}}</td>
+              <td>{{product.desc}}</td>
+              <td>{{product.pub_date}}</td>
+            </tr>
+    
+            {% endfor %}
+
+          </tbody>
+    </table>
+
+  </div>
+
+{% endif %}
+</body>
+</html>
+
+
+
+
